@@ -59,8 +59,8 @@ function pedirNotas() {
 }
 
 
-
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
+
 
 function cerrarSesion() {
     guardarLocal(listaNotas);
@@ -72,6 +72,7 @@ function iniciarSesion() {
     
 }
 
+// Guardar nombre en el span del navbar
 
 window.addEventListener('load', function() {
     let nombreGuardado = sessionStorage.getItem('username');
