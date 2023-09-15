@@ -85,6 +85,12 @@ input:focus {
 
 /* ------------------------------------------ */
 
+span {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 30px;
+    margin-top: 2px;
+}
 
 table {
     border-collapse: collapse;

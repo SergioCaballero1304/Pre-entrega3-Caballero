@@ -51,7 +51,7 @@ function pedirNotas() {
     for (let i = 1; i < 4; i++) {
         let nota = parseInt(prompt(`Ingrese la nota número ${i}: (1-12)`));
         while (nota < 1 || nota > 12) {
-            nota = parseInt(prompt("ENTRE 1 Y 12 TE DIJE LA PUTA QUE TE PARIO"));
+            nota = parseInt(prompt("Error, las notas deben ser entre 1 y 12"));
         }
         notas[i] = nota;
     }
@@ -61,3 +61,22 @@ function pedirNotas() {
 
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
+
+function cerrarSesion() {
+    guardarLocal(listaNotas);
+}
+
+function iniciarSesion() {
+    let username = document.getElementById('username').value;
+    sessionStorage.setItem("username", username);
+    
+}
+
+
+window.addEventListener('load', function() {
+    let nombreGuardado = sessionStorage.getItem('username');
+    if (nombreGuardado) {
+        let span = document.getElementById("username");
+        span.textContent = nombreGuardado;
+    }
+});
